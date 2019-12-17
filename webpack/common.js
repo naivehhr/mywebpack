@@ -2,16 +2,6 @@ const path = require("path")
 const srcRoot = "./src"
 const HtmlWebpackPlugin = require("html-webpack-plugin") // 生成html模板
 module.exports = {
-  // 输入配置
-  // entry: ["./src/index.tsx"],
-  entry: ["./src/test.js"],
-
-  // 输出配置
-  output: {
-    path: path.resolve(__dirname, "./dev"),
-    filename: "bundle.min.js"
-  },
-
   module: {
     // 加载器配置
     rules: [
@@ -24,14 +14,38 @@ module.exports = {
         test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/i,
+        include: /node_modules|antd\.css/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          }
+        ]
+      },
+      {
+        test: /\.css$/i,
+        exclude: /node_modules|antd\.css/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              getLocalIdent: (context, localIdentName, localName, options) => {
+                return "whatever_random_class_name"
+              }
+            }
+          }
+        ]
       }
     ]
-  },
-  devServer: {
-    // 配置webpack-dev-server， 在本地启动一个服务器运行
-    host: "localhost", // 服务器的ip地址 希望服务器外可以访问就设置 0.0.0.0
-    port: 8088, // 端口
-    open: true // 自动打开页面
   },
   plugins: [
     new HtmlWebpackPlugin({

@@ -50,13 +50,13 @@
       return Object.prototype.hasOwnProperty.call(e, t)
     }),
     (n.p = ""),
-    n((n.s = 0))
-})([
-  function(e, t, n) {
+    n((n.s = 12))
+})({
+  12: function(e, t, n) {
     "use strict"
     n.r(t),
       (t.default = function() {
         console.log("Aran")
       })
   }
-])
+})

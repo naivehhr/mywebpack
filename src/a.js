@@ -1,5 +1,7 @@
-function Aran() {
-  console.log("Aran")
+function Bingo() {
+  console.log("Bingo")
 }
 
-export default Aran
+window.Bingo = Bingo
+
+export default Bingo
