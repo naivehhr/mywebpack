@@ -38,9 +38,9 @@ module.exports = {
             loader: "css-loader",
             options: {
               modules: true,
-              getLocalIdent: (context, localIdentName, localName, options) => {
-                return "whatever_random_class_name"
-              }
+              // getLocalIdent: (context, localIdentName, localName, options) => {
+              //   return "whatever_random_class_name"
+              // }
             }
           }
         ]
