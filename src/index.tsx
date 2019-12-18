@@ -6,7 +6,8 @@ import styles from "./index.css"
 // import CC from "./cc"
 // console.log(BB)
 // console.log(CC)
-import MyForm from "./Form/Form"
+// import MyForm from "./Form/Form"
+import MyForm from "../dist/schemaform"
 export default function App() {
   return (
     <div className={styles.main}>
@@ -20,6 +21,8 @@ export default function App() {
             validate: { maxLen: 3, required: true }
           }
         }}
+        // formError={{}}
+        // formData={{}}
         onSubmit={() => {}}
       />
     </div>

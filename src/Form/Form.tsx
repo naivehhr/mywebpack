@@ -23,7 +23,7 @@ import styles from "./index.css"
 
 export default class Form extends React.Component<IFormProps, IFormState> {
   static getDerivedStateFromProps(props: IFormProps, state: IFormState) {
-    const { formData, formSchema, formError } = props
+    const { formSchema, formData = {}, formError = {} } = props
     return merge(state, {
       data: formData,
       error: formError,
@@ -41,8 +41,8 @@ export default class Form extends React.Component<IFormProps, IFormState> {
     super(props)
     this.state = {
       schema: props.formSchema,
-      data: props.formData,
-      error: props.formError
+      data: props.formData || {},
+      error: props.formError || {}
     }
     this.formValidates = [] // 收集 schema 中配置的校验
     this.subInstance = new Subscribe()
