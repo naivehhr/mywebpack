@@ -8,14 +8,14 @@ module.exports = merge(commonConfig, {
   // 输入配置
   // entry: ["./src/index.tsx", './src/test.js'],
   entry: {
-    // index: "./src/index.tsx",
-    test: "./src/Bingo.js",
-    schemaform: "./src/Form/Form.tsx"
+    index: "./src/index.tsx",
+    // test: "./src/Bingo.js",
+    // schemaform: "./src/Form/Form.tsx"
   },
   // 输出配置
   output: {
     path: path.resolve(__dirname, "../dist"),
     filename: "[name].js",
     libraryTarget: "commonjs2"
-  }
+  },
 })

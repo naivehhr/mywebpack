@@ -8,13 +8,13 @@ import styles from "./index.css" // 这种方式要写声明文件
 // console.log(CC)
 // import MyForm from "./Form/Form"
 // import MyForm from "../dist/schemaform"
-import B from './bb'
+// import B from './bb'
 // import Ba from '../lib/bb'
 export default function App() {
   return (
     <div className={styles.bingo}>
-      321
-      <B />
+      <div style={{color: 'red'}}>321</div>
+      {/* <B /> */}
       {/* <Ba /> */}
       {/* <MyForm
         formSchema={{
