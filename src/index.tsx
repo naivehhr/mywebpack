@@ -1,14 +1,27 @@
 import * as React from "react"
 import ReactDOM from "react-dom"
-import Btn from "./component"
 // import styles from "./index.css"
 import styles from "./index.css"
-
+// import { Button } from "antd"
+// import CC from "./cc"
+// console.log(BB)
+// console.log(CC)
+import MyForm from "./Form/Form"
 export default function App() {
   return (
     <div className={styles.main}>
       321
-      <Btn />
+      <MyForm
+        formSchema={{
+          name: {
+            type: "string",
+            label: "插件名称",
+            placeholder: "请填写插件名称",
+            validate: { maxLen: 3, required: true }
+          }
+        }}
+        onSubmit={() => {}}
+      />
     </div>
   )
 }

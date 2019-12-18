@@ -9,7 +9,8 @@ module.exports = merge(commonConfig, {
   // entry: ["./src/index.tsx", './src/test.js'],
   entry: {
     // index: "./src/index.tsx",
-    test: "./src/Bingo.js"
+    test: "./src/Bingo.js",
+    schemaform: "./src/Form/Form.tsx"
   },
   // 输出配置
   output: {

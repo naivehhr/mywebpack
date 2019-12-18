@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: center;
+}
+
+.horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 40px;
+}
+
+.item {
+  min-width: 350px;
+  max-width: 500px;
+}
+
+.itemHoriz:first-of-type {
+  /* margin-left: 115px; */
+}

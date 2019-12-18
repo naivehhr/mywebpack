@@ -38,9 +38,9 @@ module.exports = {
             loader: "css-loader",
             options: {
               modules: true,
-              // getLocalIdent: (context, localIdentName, localName, options) => {
-              //   return "whatever_random_class_name"
-              // }
+              modules: {
+                localIdentName: "[name]__[local]___[hash:base64:5]"
+              }
             }
           }
         ]
@@ -52,5 +52,8 @@ module.exports = {
       filename: path.resolve("./dev/index.html"), // 生成的html文件存放的地址和文件名
       template: path.resolve("./index.html") // 基于index.html模板进行生成html文件
     })
-  ]
+  ],
+  resolve: {
+    extensions: [".ts", ".js", ".tsx"]
+  }
 }

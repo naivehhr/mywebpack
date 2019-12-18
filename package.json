@@ -20,6 +20,7 @@
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-es2015": "^7.0.0-beta.53",
     "@babel/preset-react": "^7.7.4",
+    "@types/antd": "^1.0.0",
     "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
     "@types/react-helmet": "^5.0.13",
