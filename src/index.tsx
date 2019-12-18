@@ -1,18 +1,22 @@
 import * as React from "react"
 import ReactDOM from "react-dom"
 // import styles from "./index.css"
-import styles from "./index.css"
+import styles from "./index.css" // 这种方式要写声明文件
 // import { Button } from "antd"
 // import CC from "./cc"
 // console.log(BB)
 // console.log(CC)
-import MyForm from "./Form/Form"
+// import MyForm from "./Form/Form"
 // import MyForm from "../dist/schemaform"
+import B from './bb'
+// import Ba from '../lib/bb'
 export default function App() {
   return (
-    <div className={styles.main}>
+    <div className={styles.bingo}>
       321
-      <MyForm
+      <B />
+      {/* <Ba /> */}
+      {/* <MyForm
         formSchema={{
           name: {
             type: "string",
@@ -24,7 +28,7 @@ export default function App() {
         // formError={{}}
         // formData={{}}
         onSubmit={() => {}}
-      />
+      /> */}
     </div>
   )
 }
