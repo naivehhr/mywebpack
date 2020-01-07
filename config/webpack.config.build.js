@@ -4,18 +4,14 @@ const srcRoot = "./src"
 const commonConfig = require("./common")
 module.exports = merge(commonConfig, {
   mode: "development",
-  // mode: "production", 
-  // 输入配置
-  // entry: ["./src/index.tsx", './src/test.js'],
+  // mode: "production",
   entry: {
-    index: "./src/index.tsx",
-    // test: "./src/Bingo.js",
-    // schemaform: "./src/Form/Form.tsx"
+    index: "./src/index.js"
   },
   // 输出配置
   output: {
     path: path.resolve(__dirname, "../dist"),
     filename: "[name].js",
-    libraryTarget: "commonjs2"
-  },
+    // libraryTarget: "window"
+  }
 })

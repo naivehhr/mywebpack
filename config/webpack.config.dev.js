@@ -4,8 +4,7 @@ const commonConfig = require("./common")
 module.exports = merge(commonConfig, {
   mode: "development",
   entry: {
-    index: "./src/index.tsx",
-    test: "./src/a.js"
+    index: "./src/index.js",
   },
   // 输出配置
   output: {

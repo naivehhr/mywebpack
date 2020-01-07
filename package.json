@@ -6,13 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=development webpack-dev-server --config config/webpack.config.dev.js",
-    "build": "rimraf dist/* && webpack --config config/webpack.config.build.js",
+    "build": "rimraf dist/* && NODE_ENV=production webpack --config config/webpack.config.build.js",
     "lib": "rimraf lib/* && tsc --allowSyntheticDefaultImports true --listEmittedFiles --sourceMap -d --jsx react --outDir lib src/index.tsx"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "antd": "^3.26.3",
+    "loader-utils": "^1.2.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
@@ -36,6 +37,7 @@
     "html-webpack-plugin": "^3.2.0",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.8.2",
+    "node-sass": "^4.13.0",
     "style-loader": "^1.0.1",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.3",
