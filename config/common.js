@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin") // 生成html模板
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 const WebpackCleanupPlugin = require("../src/plugin/myplugin")
+const TestPlugin = require("../src/plugin/TestPlugin")
 // console.log('??', process.env.NODE_ENV)
 const isProduction = process.env.NODE_ENV === "production"
 const filename = path.resolve(`./${isProduction ? "dist" : "dev"}/index.html`)
@@ -93,6 +94,11 @@ module.exports = {
       filename: filename, // 生成的html文件存放的地址和文件名
       template: path.resolve("./index.html") // 基于index.html模板进行生成html文件
     }),
+    new TestPlugin({
+      filename: "a.js",
+      template: path.resolve(__dirname, "../otherFile/test.js")
+    }),
+
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // all options are optional
