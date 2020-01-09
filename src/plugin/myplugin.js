@@ -1,3 +1,4 @@
+const download = require("download")
 class WebpackCleanupPlugin {
   // 构造函数
   constructor(options) {
@@ -5,9 +6,52 @@ class WebpackCleanupPlugin {
   }
   // 应用函数
   apply(compiler) {
-    compiler.hooks.emit.tapAsync("TestPlugin", (compilation, callback) => {
+    compiler.plugin("watch-run", (watching, callback) => {
+      // 获取发生变化的文件列表
+      // console.log('watching', Object.keys(watching))
+      // 监听改变的文件
+      console.log('--------', watching.watchFileSystem.watcher.mtimes)
+      // const changedFiles = watching.compiler.watchFileSystem.watcher.mtimes
+      // // changedFiles 格式为键值对，键为发生变化的文件路径。
+      // if (changedFiles[filePath] !== undefined) {
+      //   // filePath 对应的文件发生了变化
+      //   console.log('filePath', filePath)
+      // }
       callback()
     })
+
+    // compiler.hooks.emit.tapAsync("TestPlugin", (compilation, callback) => {
+    //   // callback()
+    //   compilation.plugin("optimize-chunk-assets", function(chunks, callback) {
+    //     chunks.forEach(function(chunk) {
+    //       chunk.files.forEach(function(file) {
+    //         compilation.assets[file] =
+    //           "/**some comments info**/\n" + compilation.assets[file]
+    //       })
+    //     })
+    //     callback()
+    //   })
+    // })
+
+    // compiler.plugin("compilation", function(compilation) {
+    //   compilation.plugin("additional-assets", function(callback) {
+    //     download("https://img.shields.io/npm/v/webpack.svg").then(data => {
+    //       // fs.writeFileSync("dist/foo.jpg", data)
+    //       const buf = new Buffer(data)
+    //       console.log("data", buf.length)
+    //       // compilation.assets["webpack-version.svg"] = toAsset(resp)
+    //       compilation.assets["foo.svg"] = {
+    //         source: ()=> {
+    //           return data
+    //         },
+    //         size: ()=> {
+    //           return buf.length
+    //         }
+    //       }
+    //       callback();
+    //     })
+    //   })
+    // })
     // console.log(compiler)
     // 绑定钩子事件
 

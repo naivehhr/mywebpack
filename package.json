@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^3.26.3",
+    "download": "^7.1.0",
     "loader-utils": "^1.2.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
