@@ -23,7 +23,7 @@ class TestPlugin {
           "test.js"}"></script></body>`
       )
 
-      console.log(source)
+      // console.log(source)
       compilation.assets["index.html"] = {
         source: function() {
           return source

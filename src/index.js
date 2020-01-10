@@ -9,7 +9,8 @@ export default function App() {
     <div className={"aran"}>
       <div style={{ color: "red" }}>[name]</div>
       <div>122s1s3</div>
-      <Home />
+      {/* <Home /> */}
+    <div className="a_b">qqq</div>
     </div>
   )
 }

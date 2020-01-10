@@ -10,7 +10,7 @@ class WebpackCleanupPlugin {
       // 获取发生变化的文件列表
       // console.log('watching', Object.keys(watching))
       // 监听改变的文件
-      console.log('--------', watching.watchFileSystem.watcher.mtimes)
+      // console.log('--------', watching.watchFileSystem.watcher.mtimes)
       // const changedFiles = watching.compiler.watchFileSystem.watcher.mtimes
       // // changedFiles 格式为键值对，键为发生变化的文件路径。
       // if (changedFiles[filePath] !== undefined) {

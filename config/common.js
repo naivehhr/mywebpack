@@ -80,9 +80,18 @@ module.exports = {
             // }
           },
           {
-            loader: path.resolve("./src/loader/cssloader.js"),
+            loader: path.resolve("./src/loader/themeLoader.js"),
             options: {
-              name: "aran"
+              themeConfig: {
+                "cc(GBL05A)": {
+                  light: "yellow",
+                  dark: "green"
+                },
+                "cc(AAAA)": {
+                  light: "black",
+                  dark: "white"
+                }
+              }
             }
           }
         ]
