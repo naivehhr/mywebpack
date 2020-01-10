@@ -6,7 +6,7 @@ import "./index.css"
 
 export default function App() {
   return (
-    <div className={"styles-bingo"}>
+    <div className={"aran"}>
       <div style={{ color: "red" }}>[name]</div>
       <div>122s1s3</div>
       <Home />
