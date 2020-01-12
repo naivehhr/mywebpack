@@ -3,8 +3,10 @@ const srcRoot = "./src"
 const HtmlWebpackPlugin = require("html-webpack-plugin") // 生成html模板
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
-const WebpackCleanupPlugin = require("../src/plugin/myplugin")
 const TestPlugin = require("../src/plugin/TestPlugin")
+const MyPlugin = require("../src/plugin/MyPlugin")
+const MainPlugin = require("../src/plugin/MainPlugin")
+const ListenPlugin = require("../src/plugin/ListenPlugin")
 // console.log('??', process.env.NODE_ENV)
 const isProduction = process.env.NODE_ENV === "production"
 const filename = path.resolve(`./${isProduction ? "dist" : "dev"}/index.html`)
@@ -116,7 +118,12 @@ module.exports = {
       ignoreOrder: false // Enable to remove warnings about conflicting order
     }),
     // 使用自己的插件
-    new WebpackCleanupPlugin()
+    new MyPlugin({
+      name: "aran"
+    }),
+    // new TestPlugin(),
+    new MainPlugin(),
+    new ListenPlugin()
   ],
   resolve: {
     extensions: [".ts", ".js", ".tsx"]

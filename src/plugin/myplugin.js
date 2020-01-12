@@ -1,24 +1,43 @@
 const download = require("download")
-class WebpackCleanupPlugin {
+
+// const HtmlWebpackPlugin = require("html-webpack-plugin")
+// const HtmlWebpackPlugin = require("safe-require")("html-webpack-plugin")
+class MyPlugin {
   // 构造函数
   constructor(options) {
     console.log("WebpackCleanupPlugin", options)
   }
   // 应用函数
   apply(compiler) {
-    compiler.plugin("watch-run", (watching, callback) => {
-      // 获取发生变化的文件列表
-      // console.log('watching', Object.keys(watching))
-      // 监听改变的文件
-      // console.log('--------', watching.watchFileSystem.watcher.mtimes)
-      // const changedFiles = watching.compiler.watchFileSystem.watcher.mtimes
-      // // changedFiles 格式为键值对，键为发生变化的文件路径。
-      // if (changedFiles[filePath] !== undefined) {
-      //   // filePath 对应的文件发生了变化
-      //   console.log('filePath', filePath)
-      // }
-      callback()
-    })
+    // compiler.apply("aran", { age: 123 })
+    // console.log(Object.keys(compiler))
+    // https://www.timsrc.com/article/45/extending-with-plugins
+    // 写文件 看webpack 书
+    // 异步事件
+    // compiler.hooks.emit.tapAsync(
+    //   "HelloAsyncPlugin",
+    //   (compilation, callback) => {
+    //     // 做一些异步的事情……
+    //     setTimeout(function() {
+    //       console.log("Done with async work...")
+    //       // callback()
+    //     }, 1000)
+    //   }
+    // )
+
+    // compiler.plugin("watch-run", (watching, callback) => {
+    //   // 获取发生变化的文件列表
+    //   // console.log('watching', Object.keys(watching))
+    //   // 监听改变的文件
+    //   // console.log('--------', watching.watchFileSystem.watcher.mtimes)
+    //   // const changedFiles = watching.compiler.watchFileSystem.watcher.mtimes
+    //   // // changedFiles 格式为键值对，键为发生变化的文件路径。
+    //   // if (changedFiles[filePath] !== undefined) {
+    //   //   // filePath 对应的文件发生了变化
+    //   //   console.log('filePath', filePath)
+    //   // }
+    //   callback()
+    // })
 
     // compiler.hooks.emit.tapAsync("TestPlugin", (compilation, callback) => {
     //   // callback()
@@ -152,4 +171,4 @@ class WebpackCleanupPlugin {
   }
 }
 
-module.exports = WebpackCleanupPlugin
+module.exports = MyPlugin

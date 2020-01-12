@@ -2,7 +2,19 @@
   background-color: ghostwhite;
 }
 
-.styles-bingo {
+.aran {
   background-color: yellow;
+  padding: 10px;
+}
+html[data-theme='dark'] .aran {
+  background-color: green;
+  padding: 10px;
+}
+
+.a_b {
+  color: black;
+}
+html[data-theme='dark'] .a_b {
+  color: white;
 }
 
