@@ -5,7 +5,6 @@ class TestPlugin {
   }
   apply(compiler) {
     compiler.hooks.emit.tapAsync("TestPlugin", (compilation, callback) => {
-      // console.log("TestPlugin",compilation.assets)
       let template = fs.readFileSync(this.options.template, "UTF-8")
       compilation.assets[this.options.filename || "test.js"] = {
         source: function() {

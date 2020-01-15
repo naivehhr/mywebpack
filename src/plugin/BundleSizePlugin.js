@@ -22,6 +22,7 @@ class BundleSizePlugin {
   }
   apply(compiler) {
     compiler.hooks.done.tap("BundleSizePlugin", stats => {
+      info("======开始检测======")
       const { path, filename } = stats.compilation.options.output
       const bundlePath = resolve(path, filename)
       const { size } = fs.statSync(bundlePath)
@@ -37,6 +38,8 @@ class BundleSizePlugin {
           error(msg)
         }
       }
+      info("======检测结束======")
+
     })
   }
 }

@@ -1,4 +1,5 @@
 const download = require("download")
+const { info } = require("prettycli")
 
 // const HtmlWebpackPlugin = require("html-webpack-plugin")
 // const HtmlWebpackPlugin = require("safe-require")("html-webpack-plugin")
@@ -10,14 +11,13 @@ class MyPlugin {
   }
   // 应用函数
   apply(compiler) {
-
     // 扩展三方 plugin
-    compiler.plugin("compilation", function(compilation) {
-      compilation.plugin("html-webpack-plugin-after-emit", function(data, cb) {
-        console.log('11111111')
-        cb()
-      })
-    })
+    // compiler.plugin("compilation", function(compilation) {
+    //   compilation.plugin("html-webpack-plugin-after-emit", function(data, cb) {
+    //     console.log('11111111')
+    //     cb()
+    //   })
+    // })
 
     // 新旧版本
     // compiler.hooks.done.tap
@@ -48,15 +48,11 @@ class MyPlugin {
 
     // compiler.plugin("watch-run", (watching, callback) => {
     //   // 获取发生变化的文件列表
-    //   // console.log('watching', Object.keys(watching))
-    //   // 监听改变的文件
-    //   // console.log('--------', watching.watchFileSystem.watcher.mtimes)
-    //   // const changedFiles = watching.compiler.watchFileSystem.watcher.mtimes
-    //   // // changedFiles 格式为键值对，键为发生变化的文件路径。
-    //   // if (changedFiles[filePath] !== undefined) {
-    //   //   // filePath 对应的文件发生了变化
-    //   //   console.log('filePath', filePath)
-    //   // }
+    //   // info("watching", Object.keys(watching))
+    //   info("============感受变化============")
+    //   const changedFiles = compiler.watchFileSystem.watcher.mtimes
+    //   // changedFiles 格式为键值对，键为发生变化的文件路径。
+    //   console.log('changedFiles', changedFiles)
     //   callback()
     // })
 

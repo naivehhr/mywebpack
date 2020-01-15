@@ -15,9 +15,9 @@ module.exports = merge(commonConfig, {
     filename: "index.js"
   },
 
-  // plugins: [
-  //   new BundleSizePlugin({
-  //     sizeLimit: 1.1
-  //   })
-  // ]
+  plugins: [
+    new BundleSizePlugin({
+      sizeLimit: 1.1
+    })
+  ]
 })
