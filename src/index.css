@@ -1,12 +1,38 @@
+body {
+  background: #f6f6f6;
+}
+
 .bingo {
   background-color: ghostwhite;
 }
 
-.aran {
-  background-color: cc(GBL05A);
-  padding: 10px;
+.page {
+  padding: 20px;
+  background-color: cc(bg001);
+  width: 800px;
+  height: 600px;
+  margin: 0 auto;
+  transition: all .3s linear;
 }
 
-.a_b {
+.title {
+  font-size: 30px;
+  text-align: center;
   color: cc(AAAA);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  color: cc(AAAA);
+}
+
+.content > section {
+  flex: 2;
+}
+
+.content > img {
+  flex: 1;
+  width: 500px;
 }

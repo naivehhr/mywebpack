@@ -5,10 +5,25 @@ const download = require("download")
 class MyPlugin {
   // 构造函数
   constructor(options) {
-    console.log("WebpackCleanupPlugin", options)
+    console.log("MyPlugin", options)
+    this.templete = options.templete
   }
   // 应用函数
   apply(compiler) {
+    compiler.hooks.done.tap("HelloPlugin", status => {
+      // console.log(Object.keys(status.compilation.hooks))
+    })
+
+    // 新旧版本
+    // compiler.hooks.done.tap
+    // compiler.plugin('done' , () => {})
+    
+    // compiler.hooks.emit.tap("woqu", compilation => {
+    //   console.log("emit")
+    // })
+    // compiler.hooks.afterEmit.tap("woqu", compilation => {
+    //   console.log("afterEmit", this.originalHtml)
+    // })
     // compiler.apply("aran", { age: 123 })
     // console.log(Object.keys(compiler))
     // https://www.timsrc.com/article/45/extending-with-plugins

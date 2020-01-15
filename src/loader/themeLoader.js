@@ -1,12 +1,5 @@
 const { getOptions } = require("loader-utils")
 
-// const group = {
-//   "cc(GBL05A)": {
-//     light: "yellow",
-//     dark: "green"
-//   }
-// }
-
 module.exports = function(source) {
   const { themeConfig = {} } = getOptions(this)
   source = source.replace(/(\.[\w|\s]*\{[^\{\}]*\})/g, d => {
@@ -20,6 +13,5 @@ module.exports = function(source) {
       return d
     }
   })
-  // console.log(source)
   return source
 }
