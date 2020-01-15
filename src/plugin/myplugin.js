@@ -10,17 +10,23 @@ class MyPlugin {
   }
   // 应用函数
   apply(compiler) {
-    compiler.hooks.done.tap("HelloPlugin", status => {
-      // console.log(Object.keys(status.compilation.hooks))
+
+    // 扩展三方 plugin
+    compiler.plugin("compilation", function(compilation) {
+      compilation.plugin("html-webpack-plugin-after-emit", function(data, cb) {
+        console.log('11111111')
+        cb()
+      })
     })
 
     // 新旧版本
     // compiler.hooks.done.tap
     // compiler.plugin('done' , () => {})
-    
+
     // compiler.hooks.emit.tap("woqu", compilation => {
     //   console.log("emit")
     // })
+
     // compiler.hooks.afterEmit.tap("woqu", compilation => {
     //   console.log("afterEmit", this.originalHtml)
     // })
