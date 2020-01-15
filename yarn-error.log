@@ -1,17 +1,20 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js build
+  /usr/local/bin/node /usr/local/bin/yarn
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/huhaoran/.composer/vendor/bin:/Users/huhaoran/.rvm/bin
+  /Users/aran.hu/.yarn/bin:/Users/aran.hu/.config/yarn/global/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Users/aran.hu/.yarn/bin:/Users/aran.hu/.config/yarn/global/node_modules/.bin
 
 Yarn version: 
-  1.5.1
+  1.16.0
 
 Node version: 
-  10.16.0
+  11.10.1
 
 Platform: 
   darwin x64
+
+Trace: 
+  Error: EACCES: permission denied, unlink '/Users/aran.hu/Desktop/aran/mywebpack/node_modules/.yarn-integrity'
 
 npm manifest: 
   {
@@ -31,6 +34,7 @@ npm manifest:
       "antd": "^3.26.3",
       "download": "^7.1.0",
       "loader-utils": "^1.2.3",
+      "prettycli": "^1.4.3",
       "react": "^16.12.0",
       "react-dom": "^16.12.0",
       "safe-require": "^1.0.3",
@@ -3292,6 +3296,13 @@ Lockfile:
     version "3.5.1"
     resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
   
+  file-loader@^5.0.2:
+    version "5.0.2"
+    resolved "https://registry.npm.taobao.org/file-loader/download/file-loader-5.0.2.tgz?cache=0&sync_timestamp=1574689320406&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffile-loader%2Fdownload%2Ffile-loader-5.0.2.tgz#7f3d8b4ac85a5e8df61338cfec95d7405f971caa"
+    dependencies:
+      loader-utils "^1.2.3"
+      schema-utils "^2.5.0"
+  
   file-type@^3.8.0:
     version "3.9.0"
     resolved "https://registry.npm.taobao.org/file-type/download/file-type-3.9.0.tgz#257a078384d1db8087bc449d107d52a52672b9e9"
@@ -6536,7 +6547,7 @@ Lockfile:
       ajv-errors "^1.0.0"
       ajv-keywords "^3.1.0"
   
-  schema-utils@^2.0.1, schema-utils@^2.6.0:
+  schema-utils@^2.0.1, schema-utils@^2.5.0, schema-utils@^2.6.0:
     version "2.6.1"
     resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-2.6.1.tgz#eb78f0b945c7bcfa2082b3565e8db3548011dc4f"
     dependencies:
@@ -7759,18 +7770,3 @@ Lockfile:
     dependencies:
       buffer-crc32 "~0.2.3"
       fd-slicer "~1.1.0"
-
-Trace: 
-  Error: Command failed.
-  Exit code: 1
-  Command: sh
-  Arguments: -c rimraf dist/* && NODE_ENV=production webpack --config config/webpack.config.build.js
-  Directory: /Users/huhaoran/Desktop/aran/mywebpack
-  Output:
-  
-      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
-      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
-      at ChildProcess.emit (events.js:198:13)
-      at maybeClose (internal/child_process.js:982:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:259:5)

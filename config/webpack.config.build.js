@@ -1,6 +1,7 @@
 const merge = require("webpack-merge")
 const path = require("path")
 const srcRoot = "./src"
+const BundleSizePlugin = require("../src/plugin/BundleSizePlugin")
 const commonConfig = require("./common")
 module.exports = merge(commonConfig, {
   mode: "development",
@@ -11,7 +12,12 @@ module.exports = merge(commonConfig, {
   // 输出配置
   output: {
     path: path.resolve(__dirname, "../dist"),
-    filename: "[name].js",
-    // libraryTarget: "window"
-  }
+    filename: "index.js"
+  },
+
+  plugins: [
+    new BundleSizePlugin({
+      sizeLimit: 1.1
+    })
+  ]
 })

@@ -128,7 +128,7 @@ module.exports = {
     // }),
     // new MainPlugin(),
     // new ListenPlugin()
-    // 使用自己的插件
+    // 自定义插件
     new MyPlugin({
       templete: path.resolve("./index.html")
     })
